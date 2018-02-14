@@ -1,0 +1,44 @@
+<!DOCTYPE tiles-definitions PUBLIC  
+      "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"  
+      "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+<tiles-definitions>
+	<!-- Base Define -->
+	<definition name="base" template="/WEB-INF/tiles/classic.jsp">
+		<put-attribute name="title" value="" />
+		<put-attribute name="header" value="/WEB-INF/fragments/header.jsp" />
+		<put-attribute name="sidebar" value="/WEB-INF/fragments/sidebar.jsp" />
+		<put-attribute name="body" value="" />	
+		<put-attribute name="footer" value="/WEB-INF/fragments/footer.jsp" />
+	</definition>
+	
+	<definition name = "reg" template = "/WEB-INF/tiles/registerTile.jsp">
+	<put-attribute name="header" value="/WEB-INF/fragments/header.jsp" />
+	<put-attribute name="sidebar" value="/WEB-INF/fragments/sidebar.jsp" />
+	<put-attribute name="body" value = "/WEB-INF/views/reg.jsp" />	
+	</definition>
+
+
+	<definition name = "login" template = "/WEB-INF/tiles/registerTile.jsp">
+		
+	<put-attribute name="header" value="/WEB-INF/fragments/header.jsp" />
+	<put-attribute name="sidebar" value="/WEB-INF/fragments/sidebar.jsp" />
+	<put-attribute name="body" value = "/WEB-INF/views/login.jsp" />	
+	</definition>
+ 
+<!-- 	
+	<definition name = "*" extends = "authorizathion">
+	<put-attribute name="body" value = "/WEB-INF/views/{1}.jsp" />
+	</definition>
+-->	
+	<definition name = "*" extends = "base">
+		<put-attribute name="title" value = "Pages title" />
+		<put-attribute name="body" value = "/WEB-INF/views/{1}.jsp" />
+	</definition>
+	
+	<definition name = "*/*" extends = "base">
+		<put-attribute name="title" value = "Page title" />
+		<put-attribute name="body" value = "/WEB-INF/views/{1}/{2}.jsp" />
+	</definition>
+	
+	
+</tiles-definitions>
