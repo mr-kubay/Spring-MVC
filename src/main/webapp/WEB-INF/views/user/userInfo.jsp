@@ -8,5 +8,6 @@
 </head>
 <body>
  <h1>${userName}</h1>
+ <a href = "${pageContext.request.contextPath}/user/${userName}/profile">show profile</a>
 </body>
 </html>

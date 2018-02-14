@@ -7,7 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<h1>${item1}</h1>
-	<a href = "${pageContext.request.contextPath}/items/${item1}/shopcard">Add this item to shopcard</a>
+ <h1>Order</h1>
 </body>
 </html>

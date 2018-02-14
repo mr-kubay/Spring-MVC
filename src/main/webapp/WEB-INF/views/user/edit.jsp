@@ -6,8 +6,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
 </head>
-<body>
-	<h1>${item1}</h1>
-	<a href = "${pageContext.request.contextPath}/items/${item1}/shopcard">Add this item to shopcard</a>
+<body><hr>
+	<input type = "text" value = "Edit name">
 </body>
 </html>
