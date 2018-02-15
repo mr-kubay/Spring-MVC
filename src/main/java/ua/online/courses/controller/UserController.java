@@ -3,26 +3,23 @@ package ua.online.courses.controller;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.jboss.logging.Param;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+
+import ua.online.courses.entity.User;
+import ua.online.courses.service.UserService;
 
 @Controller
 public class UserController {
-	@GetMapping("/users")
-	public String showUsers(Model model) {
-		
-		List<String> users = new ArrayList<>();
-		users.add("User1");
-		users.add("User2");
-		users.add("User3");
-		users.add("User4");
-		users.add("User5");
-		
-		model.addAttribute("usersList",users);
-		return "users";
-	}
+	
+	@Autowired
+	private UserService userService;
 	
 	@GetMapping("user/{userName}")
 	public String showUserInfo(Model model, @PathVariable("userName") String name) {
@@ -40,10 +37,31 @@ public class UserController {
 	public String showEditMenu() {
 		return "user/edit";
 	}
-	
-	@GetMapping("/items/product")
-	public String showBuyList() {
-		return "items/product";
+
+	@GetMapping("user/add")
+	public String addUserPage() {
+		return "user/add-user";
 	}
+	
+	@GetMapping("user/list")
+	public String showUsersPage(Model model) {
+		model.addAttribute("userList", userService.findAllUsers());
+		return "user/show-users";
+	}
+	
+	@PostMapping("user/add")
+	public String addUser(
+			@RequestParam("firstName") String name,
+			@RequestParam("lastName") String surname
+			) {
+		
+		User user = new User();
+		user.setFirstName(name);
+		user.setLastName(surname);
+		
+		userService.saveUser(user);
+		return "redirect:/user/list";
+	}
+	
 	
 }

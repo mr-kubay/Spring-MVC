@@ -13,5 +13,11 @@
 	
 	<h3>Show ${name}'s buying history</h3>
 	<a href = "${pageContext.request.contextPath}/items/${item1}">History</a>
+	
+	<h3>Send to ${name}'s mail</h3>
+	<a href = "${pageContext.request.contextPath}/admin/user/${userName}/profile/sendmail">send to mail</a>
+	
+	<h3>Block ${name}</h3>
+	<a href = "${pageContext.request.contextPath}/admin/user/${userName}/profile/block">Block</a>
 </body>
 </html>

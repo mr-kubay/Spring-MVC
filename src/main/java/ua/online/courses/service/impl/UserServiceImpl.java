@@ -1,5 +1,8 @@
 package ua.online.courses.service.impl;
 
+import java.util.Iterator;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -14,7 +17,7 @@ public class UserServiceImpl implements UserService {
 	private UserRepository userRepository;
 
 	@Override
-	public void save(User user) {
+	public void saveUser(User user) {
 		userRepository.save(user);
 		
 	}
@@ -23,8 +26,11 @@ public class UserServiceImpl implements UserService {
 	public User findById(int id) {
 		return userRepository.findOne(id);
 	}
-	
-	
-	
+
+	@Override
+	public List<User> findAllUsers() {
+		
+		return userRepository.findAll();
+	}
 	
 }

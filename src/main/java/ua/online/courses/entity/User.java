@@ -30,6 +30,9 @@ public class User extends BaseEntity {
 
 	@OneToMany(mappedBy = "user")
 	private List<Course> courses = new ArrayList<>();
+	
+	@OneToMany(mappedBy = "user")
+	private List<Item> items = new ArrayList<>();
 
 	public String getLogin() {
 		return login;

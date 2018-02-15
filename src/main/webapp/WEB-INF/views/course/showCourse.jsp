@@ -1,0 +1,1 @@
+<a>${course} + asd</a>

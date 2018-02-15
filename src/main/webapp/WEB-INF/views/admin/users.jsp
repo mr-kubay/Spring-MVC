@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,9 +8,9 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<h1>${item1}</h1>
-	<a href = "${pageContext.request.contextPath}/items/${item1}/shopcard">Add this item to shopcard</a> <br>
-	<a href = "${pageContext.request.contextPath}/admin/items/${item1}/edit">Edit item </a>
-	
+<h1>User list</h1> <hr>
+	<c:forEach items="${usersList}" var="user">
+		<a href="${pageContext.request.contextPath}/user/${user}">${user}</a>	<br> <hr>
+	</c:forEach>
 </body>
 </html>

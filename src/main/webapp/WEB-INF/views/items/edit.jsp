@@ -7,9 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<h1>${item1}</h1>
-	<a href = "${pageContext.request.contextPath}/items/${item1}/shopcard">Add this item to shopcard</a> <br>
-	<a href = "${pageContext.request.contextPath}/admin/items/${item1}/edit">Edit item </a>
-	
+<hr>
+<input type = "text" value = "Edit item name">
 </body>
 </html>
