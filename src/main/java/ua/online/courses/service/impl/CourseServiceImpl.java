@@ -1,6 +1,6 @@
 package ua.online.courses.service.impl;
 
-import java.util.Iterator;
+
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,6 +29,11 @@ public class CourseServiceImpl implements CourseService{
 	@Override
 	public Course findCourseById(int id) {
 		return courseRepository.findOne(id);
+	}
+
+	@Override
+	public Course findCourseByTitle(String title) {
+		return courseRepository.findByTitle(title);
 	}
 
 

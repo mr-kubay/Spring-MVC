@@ -4,28 +4,48 @@ import java.math.BigDecimal;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
 @Table(name = "item")
 public class Item extends BaseEntity{
 	
-	@Column
+	
 	private String name;
+	private String descr;
+	private int amount;
 	
-	@Column
+	@Column(columnDefinition = "DECIMAL(5,2)")
 	private BigDecimal price;
-	
-	@ManyToOne
-	@JoinColumn(name = "user_id")
-	private User user;
 	
 	public Item() {}
 
+	public Item(String name, String descr, int amount, BigDecimal price) {
+		this.name = name;
+		this.descr = descr;
+		this.amount = amount;
+		this.price = price;
+	}
+
 	public String getName() {
 		return name;
+	}
+
+		
+	public String getDescr() {
+		return descr;
+	}
+
+	public void setDescr(String descr) {
+		this.descr = descr;
+	}
+
+	public int getAmount() {
+		return amount;
+	}
+
+	public void setAmount(int amount) {
+		this.amount = amount;
 	}
 
 	public void setName(String name) {
@@ -40,17 +60,9 @@ public class Item extends BaseEntity{
 		this.price = price;
 	}
 
-	public User getUser() {
-		return user;
-	}
-
-	public void setUser(User user) {
-		this.user = user;
-	}
-
 	@Override
 	public String toString() {
-		return "Item [name=" + name + ", price=" + price + ", user=" + user + "]";
+		return "Item [name=" + name + ", price=" + price + "]";
 	}
 	
 	

@@ -1,9 +1,15 @@
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <h1>Create new Course</h1>
 
-<form method = "POST" action="">
-	Title <input type = "text" name = "title">  <br>
-	Description <input type = "text" name = "description"> <br>
-	Price <input type = "text" name = "price"> <br>
+<form:form
+	method = "POST"
+	action = "${pageContext.request.contextPath}/course/add"
+	modelAttribute="course">
 	
-	<input type = "submit" value = "create new Course">
-</form>
+	Title <form:input path="title"/> 
+	Description <form:input path="description"/>
+	Price <form:input path="price"/>
+	
+	<input type = "submit" value = "Create new course">
+
+</form:form>

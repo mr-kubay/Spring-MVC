@@ -4,8 +4,6 @@ import java.math.BigDecimal;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -21,11 +19,13 @@ public class Course extends BaseEntity {
 	@Column(name = "price", columnDefinition = "DECIMAL(5,2)")
 	private BigDecimal price;
 
-	@ManyToOne
-	@JoinColumn(name = "user_id")
-	private User user;
-
 	public Course() {
+	}
+
+	public Course(String title, String description, BigDecimal price) {
+		this.title = title;
+		this.description = description;
+		this.price = price;
 	}
 
 	public String getTitle() {
@@ -50,14 +50,6 @@ public class Course extends BaseEntity {
 
 	public void setPrice(BigDecimal price) {
 		this.price = price;
-	}
-
-	public User getUser() {
-		return user;
-	}
-
-	public void setUser(User user) {
-		this.user = user;
 	}
 
 	@Override

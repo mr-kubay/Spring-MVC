@@ -27,13 +27,7 @@ public class User extends BaseEntity {
 
 	@Enumerated(EnumType.STRING)
 	private UserRole role;
-
-	@OneToMany(mappedBy = "user")
-	private List<Course> courses = new ArrayList<>();
 	
-	@OneToMany(mappedBy = "user")
-	private List<Item> items = new ArrayList<>();
-
 	public String getLogin() {
 		return login;
 	}
@@ -88,14 +82,6 @@ public class User extends BaseEntity {
 
 	public void setLastName(String lastName) {
 		this.lastName = lastName;
-	}
-
-	public List<Course> getCourses() {
-		return courses;
-	}
-
-	public void setCourses(List<Course> courses) {
-		this.courses = courses;
 	}
 
 	@Override

@@ -12,5 +12,7 @@ public interface ItemService {
 	
 	Item findById(int id);
 	 
-
+	Item findItemByName(String name);
+	
+	void deleteItem(int id);
 }

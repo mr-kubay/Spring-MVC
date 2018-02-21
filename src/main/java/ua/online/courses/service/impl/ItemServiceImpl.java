@@ -32,4 +32,14 @@ public class ItemServiceImpl implements ItemService{
 		return itemRepository.findOne(id);
 	}
 
+	@Override
+	public Item findItemByName(String name) {
+		return itemRepository.findItemByName(name);
+	}
+
+	@Override
+	public void deleteItem(int id) {
+		itemRepository.delete(id);
+	}
+
 }

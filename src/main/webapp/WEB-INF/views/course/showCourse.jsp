@@ -1,1 +1,1 @@
-<a>${course} + asd</a>
+<h1>Show Course</h1>

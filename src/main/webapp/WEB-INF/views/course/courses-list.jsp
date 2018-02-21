@@ -2,5 +2,5 @@
 
 
 <c:forEach items = "${courseList}" var = "course">
-	 ${course.id} | ${course.description} | ${course.title} | ${course.price} <br>
+	${course.id} | ${course.description} | ${course.title} | ${course.price} <br>
 </c:forEach>
