@@ -14,7 +14,7 @@
 	<definition name = "reg" template = "/WEB-INF/tiles/registerTile.jsp">
 	<put-attribute name="header" value="/WEB-INF/fragments/header.jsp" />
 	<put-attribute name="sidebar" value="/WEB-INF/fragments/sidebar.jsp" />
-	<put-attribute name="body" value = "/WEB-INF/views/reg.jsp" />	
+	<put-attribute name="body" value = "/WEB-INF/views/authorization/reg.jsp" />	
 	</definition>
 
 
@@ -22,7 +22,7 @@
 		
 	<put-attribute name="header" value="/WEB-INF/fragments/header.jsp" />
 	<put-attribute name="sidebar" value="/WEB-INF/fragments/sidebar.jsp" />
-	<put-attribute name="body" value = "/WEB-INF/views/login.jsp" />	
+	<put-attribute name="body" value = "/WEB-INF/views/authorization/login.jsp" />	
 	</definition>
  
 <!-- 	
